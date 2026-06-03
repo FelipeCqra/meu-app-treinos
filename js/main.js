@@ -85,17 +85,20 @@ function iniciarEdicao(sessao) {
                 ex.series.forEach(s => {
                     const row = document.createElement('div');
                     row.className = 'sets-row dynamic-set';
-                    row.style = "display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr 40px; gap: 8px; margin-bottom: 6px; align-items: center;";
+                    // Estilização idêntica ao modelo antigo
+                    row.style = "background: #111; padding: 12px; border: 1px solid #222; border-radius: 6px; margin-bottom: 12px; display: flex; flex-direction: column; gap: 8px;";
                     row.innerHTML = `
-                        <select class="set-type" style="padding: 7px; background: #1a1a1a; color: #fff; border: 1px solid #333; border-radius: 4px; font-size:13px;">
+                        <select class="set-type" style="padding: 8px; background: #1a1a1a; color: #fff; border: 1px solid #333; border-radius: 4px; font-size:14px; width: 100%;">
                             <option value="Aquecimento" ${s.tipo === 'Aquecimento' ? 'selected' : ''}>Aquecimento</option>
                             <option value="Ajuste" ${s.tipo === 'Ajuste' ? 'selected' : ''}>Ajuste (Feeder)</option>
                             <option value="Válida" ${s.tipo === 'Válida' ? 'selected' : ''}>Válida (Top/Backoff)</option>
                         </select>
-                        <input type="number" class="set-placas" placeholder="Placas" min="0" value="${s.placas || ''}" style="padding: 7px; background: #1a1a1a; color: #fff; border: 1px solid #333; border-radius: 4px; width:100%; font-size:13px;">
-                        <input type="number" class="set-load" placeholder="kg" min="0" step="0.5" value="${s.carga || ''}" style="padding: 7px; background: #1a1a1a; color: #fff; border: 1px solid #333; border-radius: 4px; width:100%; font-size:13px;">
-                        <input type="text" class="set-reps" placeholder="Ex: 8-10" value="${s.reps || ''}" style="padding: 7px; background: #1a1a1a; color: #fff; border: 1px solid #333; border-radius: 4px; width:100%; font-size:13px;">
-                        <button type="button" class="btn-del-set" title="Remover" style="background:transparent; color:#ff2a2a; border:none; font-size:16px; cursor:pointer; text-align:center;">×</button>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                            <input type="number" class="set-placas" placeholder="Placas" min="0" value="${s.placas || ''}" style="padding: 8px; background: #1a1a1a; color: #fff; border: 1px solid #333; border-radius: 4px; font-size:14px; text-align: center;">
+                            <input type="number" class="set-load" placeholder="Carga (kg)" min="0" step="0.5" value="${s.carga || ''}" style="padding: 8px; background: #1a1a1a; color: #fff; border: 1px solid #333; border-radius: 4px; font-size:14px; text-align: center;">
+                        </div>
+                        <input type="text" class="set-reps" placeholder="Reps (Ex: 8-10)" value="${s.reps || ''}" style="padding: 8px; background: #1a1a1a; color: #fff; border: 1px solid #333; border-radius: 4px; font-size:14px; text-align: center; width: 100%;">
+                        <button type="button" class="btn-del-set" style="background: #3a1111; color: #ff4d4d; border: 1px solid #551a1a; border-radius: 4px; padding: 6px; font-weight: bold; cursor: pointer; font-size: 14px; width: 100%; text-align: center; margin-top: 4px;">X</button>
                     `;
                     row.querySelector(".btn-del-set").addEventListener("click", () => row.remove());
                     setsContainer.appendChild(row);
@@ -161,7 +164,6 @@ async function handleFormSubmit(e) {
     }
 
     const parts = rawDate.split('-');
-    // Variável uniformizada para evitar ReferenceError
     const dataStrFormatada = `${parts[2]}/${parts[1]}/${parts[0]}`; 
     const timestampMilisegundos = new Date(parts[0], parts[1] - 1, parts[2]).getTime();
 
@@ -222,7 +224,7 @@ async function handleFormSubmit(e) {
         semanaNum: semanaNum, 
         faseDescricao: faseDescricao, 
         dataTreino: rawDate, 
-        dataStr: dataStrFormatada, // Associação explícita e segura
+        dataStr: dataStrFormatada, 
         dataMilisegundos: timestampMilisegundos,
         treino: workout, 
         notasGerais: generalNotes, 
