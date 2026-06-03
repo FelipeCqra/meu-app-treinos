@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Tracker - Modular</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Gym <span>Tracker</span></h1>
+    </header>
+
+    <nav id="main-nav">
+        <div class="tab-btn active" data-tab="mesociclos">Mesociclos</div>
+        <div class="tab-btn" data-tab="treino">Protocolo</div>
+        <div class="tab-btn" data-tab="dieta">Dieta</div>
+        <div class="tab-btn" data-tab="registrar">Registrar Treino</div>
+        <div class="tab-btn" data-tab="feedback">Feedbacks</div>
+    </nav>
+
+    <div class="container">
+    
+        <div id="mesociclos" class="tab-content active">
+            <h2>📊 Plano Completo até 20/12/2026</h2>
+            
+            <div class="card">
+                <span class="fase-badge fase-blue">1. DELOAD INICIAL (1 Semana)</span>
+                <h3>📅 04/05/2026 → 10/05/2026</h3>
+                <p><strong>🎯 Objetivo:</strong> Recuperar fadiga do cutting</p>
+                <ul style="margin-left: 20px; font-size: 14px; color: #ccc; margin-top: 10px;">
+                    <li><strong>🔥 Calorias:</strong> 2400 kcal</li>
+                    <li><strong>🍽️ Macros:</strong> 180g Prot | 65–70g Gord | ~280–300g Carb</li>
+                    <li><strong>🏋️ Treino:</strong> Volume ↓ ~50% | Sem falha</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <span class="fase-badge fase-orange">2. MANUTENÇÃO (3 Semanas)</span>
+                <h3>📅 11/05/2026 → 31/05/2026</h3>
+                <p><strong>🎯 Objetivo:</strong> Consolidar físico + subir performance</p>
+                <ul style="margin-left: 20px; font-size: 14px; color: #ccc; margin-top: 10px;">
+                    <li><strong>🔥 Calorias:</strong> Semanas 1–2 (2400 kcal) | Semana 3 (2500–2600 kcal)</li>
+                    <li><strong>🍽️ Macros (Média):</strong> 180g Prot | 65–70g Gord | 280–320g Carb</li>
+                </ul>
+            </div>
+
+            <div class="card card-highlight">
+                <span class="fase-badge fase-green">🔥 3. LEAN BULK - FASE PRINCIPAL (~20 Semanas)</span>
+                <h3>📅 01/06/2026 → 25/10/2026</h3>
+                <p><strong>🎯 Objetivo:</strong> Ganho de massa controlado</p>
+                
+                <div style="margin-top: 15px; border-left: 2px solid #333; padding-left: 15px;">
+                    <h4 style="color: #66ff66;">🧱 Bloco 1 (7 Semanas)</h4>
+                    <p style="font-size: 14px; color: #aaa;">08/06 → 19/07 | 2700 → 2850 kcal</p>
+                    <p style="font-size: 13px; color: #66b2ff;">🛠️ DELOAD: 20/07 → 26/07 (2600 kcal)</p>
+                    <hr style="border:0; border-top: 1px dashed #333; margin: 10px 0;">
+                    
+                    <h4 style="color: #66ff66;">🧱 Bloco 2 (6 Semanas)</h4>
+                    <p style="font-size: 14px; color: #aaa;">27/07 → 06/09 | 2800 → 3000 kcal</p>
+                    <p style="font-size: 13px; color: #66b2ff;">🛠️ DELOAD: 07/09 → 13/09 (2600–2650 kcal)</p>
+                    <hr style="border:0; border-top: 1px dashed #333; margin: 10px 0;">
+
+                    <h4 style="color: #66ff66;">🧱 Bloco 3 (6 Semanas)</h4>
+                    <p style="font-size: 14px; color: #aaa;">14/09 → 25/10 | 2850 → 2750 → 2650 kcal <i>(Início da desaceleração gradual)</i></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="fase-badge fase-orange">🔻 TRANSIÇÃO (1 Semana)</span>
+                <h3>📅 26/10/2026 → 01/11/2026</h3>
+                <p>🔥 Calorias: 2500 kcal</p>
+            </div>
+
+            <div class="card">
+                <span class="fase-badge fase-red">🔻 MINI CUT (3 Semanas)</span>
+                <h3>📅 02/11/2026 → 22/11/2026</h3>
+                <p>🔥 Calorias: 2400 → 2300 → 2200 kcal</p>
+            </div>
+
+            <div class="card">
+                <span class="fase-badge fase-red">🔥 CUTTING FINAL (4 Semanas)</span>
+                <h3>📅 23/11/2026 → 20/12/2026</h3>
+                <ul style="margin-left: 20px; font-size: 14px; color: #ccc; margin-top: 10px;">
+                    <li>Semana 1: 2300 kcal</li>
+                    <li>Semana 2: 2100 kcal</li>
+                    <li>Semana 3: 2100 kcal</li>
+                    <li>Semana 4: 2350 → 2450 kcal</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="treino" class="tab-content">
+            <h2>🏋️ Protocolo de Treino de Manutenção</h2>
+
+            <div class="card">
+                <h3>Divisão Semanal</h3>
+                <div class="split-grid">
+                    <div class="split-day"><span>Segunda</span>PULL + PEITO<br><small>+ 20min Cárdio</small></div>
+                    <div class="split-day"><span>Terça</span>LEGS 1</div>
+                    <div class="split-day day-rest"><span>Quarta</span>DESCANSO<br><small>+ 30min Cárdio</small></div>
+                    <div class="split-day"><span>Quinta</span>PUSH + COSTAS</div>
+                    <div class="split-day day-rest"><span>Sexta</span>DESCANSO<br><small>+ 30min Cárdio</small></div>
+                    <div class="split-day"><span>Sábado</span>LEGS 2</div>
+                    <div class="split-day day-rest"><span>Domingo</span>DESCANSO</div>
+                </div>
+
+                <div class="obs-box">
+                    <strong style="color: #ff2a2a;">⚠️ PREPARAÇÃO DIÁRIA (CORE & WARMUP)</strong>
+                    <ul>
+                        <li><strong>LEGS 1:</strong> 1 a 2 séries de AQUECIMENTO no Stiff (Barra/Halter) ANTES do treino.</li>
+                        <li><strong>LEGS 1 e LEGS 2:</strong> 3 séries de Canoinha Isometria (3x30") ANTES do treino.</li>
+                        <li><strong>PULL+PEITO:</strong> Abdominal Supra Máquina (3x15) ANTES do treino.</li>
+                        <li><strong>PUSH+COSTAS:</strong> Abdominal Infra Máquina (3x20) ANTES do treino.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>PULL + PEITO</h3>
+                <table class="workout-table">
+                    <tr><th>Exercício</th><th>Séries Válidas</th></tr>
+                    <tr><td>Remada T-Bar Aberta</td><td>2</td></tr>
+                    <tr><td>Puxador Bilateral</td><td>2</td></tr>
+                    <tr><td>Aquecimento Manguito</td><td>2 x 12</td></tr>
+                    <tr><td>Supino Inclinado Articulado</td><td>3</td></tr>
+                    <tr><td>Remada Baixa Máquina (Apoio Peito)</td><td>3</td></tr>
+                    <tr><td>Elevação Lateral Máquina Sentado</td><td>2</td></tr>
+                    <tr><td>Rosca Unilateral Cabo</td><td>2</td></tr>
+                    <tr><td>Tríceps Pulley Encostado</td><td>2</td></tr>
+                </table>
+
+                <h3>LEGS 1</h3>
+                <table class="workout-table">
+                    <tr><th>Exercício</th><th>Séries Válidas</th></tr>
+                    <tr><td>Extensão Lombar (Paravertebral+Posterior)</td><td>2</td></tr>
+                    <tr><td>Estímulo Cadeira Adutora</td><td>1</td></tr>
+                    <tr><td>Cadeira Extensora</td><td>2</td></tr>
+                    <tr><td>Leg Horizontal Unilateral</td><td>2</td></tr>
+                    <tr><td>Panturrilha Leg Horizontal</td><td>2</td></tr>
+                </table>
+
+                <h3>PUSH + COSTAS</h3>
+                <table class="workout-table">
+                    <tr><th>Exercício</th><th>Séries Válidas</th></tr>
+                    <tr><td>Remada T-Bar Fechada</td><td>2</td></tr>
+                    <tr><td>Puxador Aberto Romano</td><td>3</td></tr>
+                    <tr><td>Aquecimento Manguito</td><td>2 x 12</td></tr>
+                    <tr><td>Supino Reto Máquina</td><td>2</td></tr>
+                    <tr><td>Fly Máquina</td><td>1</td></tr>
+                    <tr><td>Elevação Lateral Unilateral Cabo</td><td>3</td></tr>
+                    <tr><td>Rosca Scott</td><td>2</td></tr>
+                    <tr><td>Tríceps Pulley</td><td>2</td></tr>
+                </table>
+
+                <h3>LEGS 2</h3>
+                <table class="workout-table">
+                    <tr><th>Exercício</th><th>Séries Válidas</th></tr>
+                    <tr><td>Mesa Flexora Unilateral</td><td>2</td></tr>
+                    <tr><td>Cadeira Flexora Unilateral</td><td>2</td></tr>
+                    <tr><td>Estímulo Cadeira Abdutora</td><td>1</td></tr>
+                    <tr><td>Hack Machine ou Agachamento Máquina</td><td>2</td></tr>
+                    <tr><td>Panturrilha Sentado</td><td>2</td></tr>
+                    <tr><td>Panturrilha Em Pé Livre</td><td>2</td></tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Volume Total Semanal (Microciclo)</h3>
+                <table class="vol-table">
+                    <tr>
+                        <th>Músculo</th>
+                        <th>Volume Mínimo</th>
+                        <th>Volume Máximo</th>
+                    </tr>
+                    <tr><td>Costas</td><td>14 (12 + 2 Lombar)</td><td>18 (15 + 3 Lombar)</td></tr>
+                    <tr><td>Peito</td><td>6</td><td>9</td></tr>
+                    <tr><td>Ombro</td><td>5</td><td>6</td></tr>
+                    <tr><td>Bíceps</td><td>4</td><td>6</td></tr>
+                    <tr><td>Tríceps</td><td>4</td><td>6</td></tr>
+                    <tr><td>Quadríceps</td><td>6</td><td>6</td></tr>
+                    <tr><td>Posterior</td><td>6</td><td>7</td></tr>
+                    <tr><td>Panturrilha</td><td>6</td><td>6</td></tr>
+                </table>
+                <p style="font-size: 12px; color: #aaa; text-align: center; margin-top: 10px;">* Avaliar aumento de volume de Peito, Bíceps e Tríceps com o passar das semanas.</p>
+            </div>
+        </div>
+
+        <div id="dieta" class="tab-content">
+            <h2>🍽️ Estratégia Nutricional</h2>
+            
+            <div class="card">
+                <h3>Regras Gerais</h3>
+                <ul style="list-style: none; color: #ccc; font-size: 14px;">
+                    <li>💧 <strong>Hidratação:</strong> ~5L de Água por dia (8 garrafas de 600ml)</li>
+                    <li>⏱️ <strong>Horários Padrão:</strong> 
+                        Ref 1 (09-10h) | Ref 2 (13-14h) | Ref 3 (17-18h) | Ref 4 (21-22h)
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card card-highlight">
+                <span class="fase-badge fase-blue">DELOAD (1 Semana)</span>
+                <h4>04/05/2026 → 10/05/2026</h4>
+                
+                <div class="macro-grid">
+                    <div class="macro-box"><span>Calorias</span><strong>2403 kcal</strong></div>
+                    <div class="macro-box"><span>Carbo</span><strong>269g</strong></div>
+                    <div class="macro-box"><span>Proteína</span><strong>181g</strong></div>
+                    <div class="macro-box"><span>Gordura</span><strong>69g</strong></div>
+                </div>
+
+                <ul class="meal-list">
+                    <li><strong>Refeição 1:</strong> 100g Tapioca + 1 Banana + 5 Ovos inteiros</li>
+                    <li><strong>Refeição 2:</strong> 150g Macarrão Espaguete (pronto) + 200g Filé de Peito de Frango (pronto)</li>
+                    <li><strong>Refeição 3:</strong> 150g Macarrão Espaguete (pronto) + 200g Filé de Peito de Frango (pronto)</li>
+                    <li><strong>Refeição 4:</strong> 70g Cuscuz + 6 Ovos inteiros + 1 Banana + 25g Aveia</li>
+                </ul>
+                <div class="obs-box"><strong>Obs Ref 4:</strong> Sem queijo, sem cream cheese. Use apenas uma pequena quantidade de manteiga.</div>
+            </div>
+
+            <div class="card card-highlight">
+                <span class="fase-badge fase-orange">MANUTENÇÃO - Fase 1 (Semanas 1-2)</span>
+                <h4>11/05/2026 → 24/05/2026</h4>
+                <p style="font-size: 14px; color: #aaa; font-style: italic;">(Mesmo protocolo estrutural do Deload)</p>
+                <div class="macro-grid">
+                    <div class="macro-box"><span>Calorias</span><strong>2403 kcal</strong></div>
+                    <div class="macro-box"><span>Carbo</span><strong>269g</strong></div>
+                    <div class="macro-box"><span>Proteína</span><strong>181g</strong></div>
+                    <div class="macro-box"><span>Gordura</span><strong>69g</strong></div>
+                </div>
+                <ul class="meal-list">
+                    <li><strong>Refeição 1:</strong> 100g Tapioca + 1 Banana + 5 Ovos inteiros</li>
+                    <li><strong>Refeição 2:</strong> 150g Macarrão Espaguete (pronto) + 200g Filé de Peito de Frango (pronto)</li>
+                    <li><strong>Refeição 3:</strong> 150g Macarrão Espaguete (pronto) + 200g Filé de Peito de Frango (pronto)</li>
+                    <li><strong>Refeição 4:</strong> 70g Cuscuz + 6 Ovos inteiros + 1 Banana + 25g Aveia</li>
+                </ul>
+                <div class="obs-box"><strong>Obs Ref 4:</strong> Sem queijo, sem cream cheese. Use apenas uma pequena quantidade de manteiga.</div>
+            </div>
+
+            <div class="card card-highlight">
+                <span class="fase-badge fase-orange">MANUTENÇÃO - Fase 2 (Semana 3)</span>
+                <h4>25/05/2026 → 31/05/2026</h4>
+                <div class="macro-grid">
+                    <div class="macro-box"><span>Calorias</span><strong>2601 kcal</strong></div>
+                    <div class="macro-box"><span>Carbo</span><strong>318g</strong></div>
+                    <div class="macro-box"><span>Proteína</span><strong>177g</strong></div>
+                    <div class="macro-box"><span>Gordura</span><strong>69g</strong></div>
+                </div>
+                <ul class="meal-list">
+                    <li><strong>Refeição 1:</strong> 120g Tapioca + 1 Banana + 5 Ovos inteiros</li>
+                    <li><strong>Refeição 2:</strong> 200g Macarrão Espaguete (pronto) + 180g Filé de Peito de Frango (pronto)</li>
+                    <li><strong>Refeição 3:</strong> 200g Macarrão Espaguete (pronto) + 180g Filé de Peito de Frango (pronto)</li>
+                    <li><strong>Refeição 4:</strong> 80g Cuscuz + 6 Ovos inteiros + 1 Banana + 30g Aveia</li>
+                </ul>
+                <div class="obs-box"><strong>Obs Ref 4:</strong> Sem queijo, sem cream cheese. Use apenas uma pequena quantidade de manteiga.</div>
+            </div>
+
+            <div class="card card-highlight">
+                <span class="fase-badge fase-green">LEAN BULK BLOCO 1 - Fase 1 (Semanas 1-3)</span>
+                <h4>01/06/2026 → 21/06/2026</h4>
+                <div class="macro-grid">
+                    <div class="macro-box"><span>Calorias</span><strong>2710 kcal</strong></div>
+                    <div class="macro-box"><span>Carbo</span><strong>358g</strong></div>
+                    <div class="macro-box"><span>Proteína</span><strong>174g</strong></div>
+                    <div class="macro-box"><span>Gordura</span><strong>65g</strong></div>
+                </div>
+                <ul class="meal-list">
+                    <li><strong>Refeição 1:</strong> 120g Tapioca + 1 Banana + 5 Ovos inteiros</li>
+                    <li><strong>Refeição 2:</strong> 220g Macarrão Espaguete (pronto) + 180g Filé de Peito de Frango (pronto) + 1 Banana Prata</li>
+                    <li><strong>Refeição 3:</strong> 200g Macarrão Espaguete (pronto) + 180g Filé de Peito de Frango (pronto)</li>
+                    <li><strong>Refeição 4:</strong> 100g Cuscuz + 5 Ovos inteiros + 1 Banana + 30g Aveia</li>
+                </ul>
+                <div class="obs-box"><strong>Obs Ref 4:</strong> Sem queijo, sem cream cheese. Use apenas uma pequena quantidade de manteiga.</div>
+            </div>
+
+            <div class="card card-highlight">
+                <span class="fase-badge fase-green">LEAN BULK BLOCO 1 - Fase 2 (Semanas 4-7)</span>
+                <h4>22/06/2026 → 19/07/2026</h4>
+                <div class="macro-grid">
+                    <div class="macro-box"><span>Calorias</span><strong>2824 kcal</strong></div>
+                    <div class="macro-box"><span>Carbo</span><strong>382g</strong></div>
+                    <div class="macro-box"><span>Proteína</span><strong>177g</strong></div>
+                    <div class="macro-box"><span>Gordura</span><strong>65g</strong></div>
+                </div>
+                <ul class="meal-list">
+                    <li><strong>Refeição 1:</strong> 120g Tapioca + 1 Banana + 5 Ovos inteiros</li>
+                    <li><strong>Refeição 2:</strong> 250g Macarrão Espaguete (pronto) + 180g Filé de Peito de Frango (pronto) + 1 Banana</li>
+                    <li><strong>Refeição 3:</strong> 250g Macarrão Espaguete (pronto) + 180g Filé de Peito de Frango (pronto)</li>
+                    <li><strong>Refeição 4:</strong> 100g Cuscuz + 5 Ovos inteiros + 1 Banana + 30g Aveia</li>
+                </ul>
+                <div class="obs-box"><strong>Obs Ref 4:</strong> Sem queijo, sem cream cheese. Use apenas uma pequena quantidade de manteiga.</div>
+            </div>
+        </div> 
+
+        <div id="registrar" class="tab-content">
+            <h2 id="tituloRegistro">Montar Sessão de Treino</h2>
+            <div class="card">
+                <form id="trainingForm">
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 5px;">
+                        <div class="form-group">
+                            <label>Data do Treino</label>
+                            <input type="date" id="treinoData" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Descrição da Fase</label>
+                            <input type="text" id="faseDescricao" placeholder="Ex: Manutenção - Semana 1">
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div class="form-group">
+                            <label>Número da Semana</label>
+                            <input type="number" id="semanaNum" value="1" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Ficha Corrente</label>
+                            <select id="workoutType">
+                                <option value="UPPER" data-membro="UPPER">UPPER (Superior)</option>
+                                <option value="LOWER" data-membro="LOWER">LOWER (Inferior)</option>
+                                <option value="PUSH" data-membro="PUSH">PUSH (Empurrar)</option>
+                                <option value="PULL" data-membro="PULL">PULL (Puxar)</option>
+                                <option value="LEGS" data-membro="LEGS">LEGS (Pernas)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <hr style="border: 0; border-top: 1px solid #333; margin: 10px 0 20px 0;">
+
+                    <div id="exercisesContainer"></div>
+
+                    <button type="button" id="btnAddExercise" class="btn-add">+ Adicionar Exercício ao Treino</button>
+
+                    <div class="form-group" style="background-color: #111; padding: 15px; border-radius: 6px; border: 1px solid #222;">
+                        <label>Percepção Geral da Sessão (Opcional)</label>
+                        <textarea id="generalNotes" rows="3" placeholder="Como foi o rendimento global? Alguma dor articular, ajuste na dieta, ou comentário sobre o cárdio pós-treino?"></textarea>
+                    </div>
+
+                    <div style="display: flex; gap: 12px;">
+                        <button type="submit" id="btnSubmitForm" class="btn-submit" style="flex: 2; margin-top: 15px;">Salvar Sessão Completa na Semana</button>
+                        <button type="button" id="btnCancelEdit" class="btn-submit" style="flex: 1; margin-top: 15px; background-color: #222; border: 1px solid #444; color: #aaa; display: none;">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="feedback" class="tab-content">
+            <h2>Histórico de Desempenho</h2>
+            <div id="meusTreinosSemanas"></div>
+        </div>
+
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

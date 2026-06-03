@@ -1,0 +1,475 @@
+/* ==========================================================================
+   1. RESET E CORES BÁSICAS
+   ========================================================================== */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', sans-serif; 
+}
+
+body { 
+    background-color: #0a0a0a; 
+    color: #eeeeee; 
+    line-height: 1.6; 
+    padding-bottom: 60px; 
+}
+
+header { 
+    background-color: #121212; 
+    border-bottom: 2px solid #ff2a2a; 
+    padding: 20px; 
+    text-align: center; 
+}
+
+header h1 { 
+    color: #ffffff; 
+    font-size: 24px; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+}
+
+header h1 span { 
+    color: #ff2a2a; 
+}
+
+/* ==========================================================================
+   2. SISTEMA DE NAVEGAÇÃO DE ABAS
+   ========================================================================== */
+#main-nav { 
+    display: flex; 
+    width: 100%; 
+    background-color: #161616; 
+    border-bottom: 1px solid #222222; 
+    overflow-x: auto; 
+}
+
+.tab-btn { 
+    flex: 1; 
+    text-align: center; 
+    padding: 15px 10px; 
+    color: #aaaaaa; 
+    cursor: pointer; 
+    font-weight: 600; 
+    font-size: 13px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    transition: background 0.3s, color 0.3s; 
+    white-space: nowrap; 
+}
+
+.tab-btn:hover { 
+    background-color: #1f1f1f; 
+    color: #ffffff; 
+}
+
+.tab-btn.active { 
+    color: #ffffff; 
+    background-color: #1a1a1a; 
+    border-bottom: 3px solid #ff2a2a; 
+}
+
+/* Gerenciamento de exibição de conteúdo */
+.tab-content { 
+    display: none; 
+}
+
+.tab-content.active { 
+    display: block; 
+}
+
+/* ==========================================================================
+   3. LAYOUT E CARDS GENERALIZADOS
+   ========================================================================== */
+.container { 
+    max-width: 800px; 
+    margin: 20px auto; 
+    padding: 0 15px; 
+}
+
+h2 { 
+    color: #ffffff; 
+    font-size: 18px; 
+    margin: 20px 0 15px 0; 
+    border-left: 4px solid #ff2a2a; 
+    padding-left: 10px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+.card { 
+    background-color: #141414; 
+    border: 1px solid #222222; 
+    border-radius: 8px; 
+    padding: 20px; 
+    margin-bottom: 20px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5); 
+    position: relative; 
+}
+
+.card-highlight { 
+    border: 1px solid #2a2a2a; 
+    background-color: #151515; 
+}
+
+.card h3 { 
+    font-size: 16px; 
+    margin-bottom: 12px; 
+    color: #ffffff; 
+    border-bottom: 1px solid #222222; 
+    padding-bottom: 8px; 
+    display: flex; 
+    align-items: center; 
+}
+
+/* Badges e Identificadores de Fases */
+.fase-badge { 
+    display: inline-block; 
+    font-size: 11px; 
+    font-weight: bold; 
+    padding: 3px 8px; 
+    border-radius: 4px; 
+    margin-bottom: 8px; 
+    text-transform: uppercase; 
+}
+
+.fase-blue { background-color: #0044cc; color: #ffffff; }
+.fase-orange { background-color: #cc6600; color: #ffffff; }
+.fase-green { background-color: #007722; color: #ffffff; }
+.fase-red { background-color: #990000; color: #ffffff; }
+
+/* ==========================================================================
+   4. COMPONENTES DE PROTOCOLO (TABELAS E GRIDS)
+   ========================================================================== */
+.split-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+    gap: 10px; 
+    margin-bottom: 15px; 
+}
+
+.split-day { 
+    background: #1c1c1c; 
+    padding: 10px; 
+    border-radius: 6px; 
+    text-align: center; 
+    font-size: 12px; 
+    border: 1px solid #252525; 
+}
+
+.split-day span { 
+    display: block; 
+    font-weight: bold; 
+    color: #ff2a2a; 
+    margin-bottom: 4px; 
+    font-size: 11px; 
+    text-transform: uppercase; 
+}
+
+.split-day small { 
+    color: #888; 
+}
+
+.day-rest { 
+    background: #111; 
+    border: 1px dashed #333; 
+}
+
+.day-rest span { 
+    color: #666; 
+}
+
+.workout-table, .vol-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-bottom: 20px; 
+    font-size: 14px; 
+}
+
+.workout-table th, .vol-table th { 
+    background-color: #1a1a1a; 
+    color: #ff2a2a; 
+    text-align: left; 
+    padding: 10px; 
+    font-weight: 600; 
+    border-bottom: 2px solid #222; 
+}
+
+.workout-table td, .vol-table td { 
+    padding: 10px; 
+    border-bottom: 1px solid #1f1f1f; 
+    color: #dddddd; 
+}
+
+.workout-table tr:hover, .vol-table tr:hover { 
+    background-color: #181818; 
+}
+
+.obs-box { 
+    background-color: #1a1515; 
+    border-left: 4px solid #ff2a2a; 
+    padding: 12px; 
+    border-radius: 0 6px 6px 0; 
+    font-size: 13px; 
+    margin-top: 15px; 
+}
+
+.obs-box ul { 
+    margin-left: 20px; 
+    margin-top: 5px; 
+    color: #ccc; 
+}
+
+/* ==========================================================================
+   5. COMPONENTES DA DIETA
+   ========================================================================== */
+.macro-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 8px; 
+    background: #111; 
+    padding: 10px; 
+    border-radius: 6px; 
+    margin: 10px 0; 
+    border: 1px solid #222; 
+}
+
+.macro-box { 
+    text-align: center; 
+}
+
+.macro-box span { 
+    display: block; 
+    font-size: 10px; 
+    color: #888; 
+    text-transform: uppercase; 
+}
+
+.macro-box strong { 
+    font-size: 14px; 
+    color: #fff; 
+}
+
+.meal-list { 
+    margin-top: 12px; 
+    list-style: none; 
+}
+
+.meal-list li { 
+    font-size: 13px; 
+    padding: 6px 0; 
+    border-bottom: 1px dashed #222; 
+    color: #ccc; 
+}
+
+.meal-list li:last-child { 
+    border-bottom: none; 
+}
+
+/* ==========================================================================
+   6. FORMULÁRIOS E CAMPOS DE ENTRADA (REGISTRO)
+   ========================================================================== */
+.form-group { 
+    margin-bottom: 15px; 
+}
+
+.form-group label { 
+    display: block; 
+    font-size: 12px; 
+    font-weight: 600; 
+    margin-bottom: 6px; 
+    color: #aaaaaa; 
+    text-transform: uppercase; 
+}
+
+input[type="text"], input[type="number"], input[type="date"], select, textarea { 
+    width: 100%; 
+    padding: 10px; 
+    background-color: #1a1a1a; 
+    border: 1px solid #333333; 
+    border-radius: 4px; 
+    color: #ffffff; 
+    font-size: 14px; 
+    transition: border-color 0.3s; 
+}
+
+input:focus, select:focus, textarea:focus { 
+    outline: none; 
+    border-color: #ff2a2a; 
+}
+
+.btn-submit { 
+    background-color: #ff2a2a; 
+    color: #ffffff; 
+    border: none; 
+    padding: 12px 20px; 
+    font-size: 14px; 
+    font-weight: bold; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    text-transform: uppercase; 
+    width: 100%; 
+    transition: background 0.3s; 
+}
+
+.btn-submit:hover { 
+    background-color: #cc1f1f; 
+}
+
+.btn-add { 
+    background-color: #1f1f1f; 
+    color: #66ff66; 
+    border: 1px dashed #444; 
+    padding: 10px; 
+    font-size: 13px; 
+    font-weight: bold; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    width: 100%; 
+    margin-bottom: 20px; 
+    transition: background 0.3s; 
+}
+
+.btn-add:hover { 
+    background-color: #252525; 
+}
+
+/* Linhas Dinâmicas de Exercícios no Formulário */
+.exercise-row-card { 
+    background: #181818; 
+    border: 1px solid #2a2a2a; 
+    border-radius: 6px; 
+    padding: 15px; 
+    margin-bottom: 15px; 
+}
+
+.exercise-header-flex { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+
+.btn-remove-exercise { 
+    background: none; 
+    border: none; 
+    color: #ff4444; 
+    cursor: pointer; 
+    font-size: 12px; 
+}
+
+.set-row { 
+    display: grid; 
+    grid-template-columns: 40px 1fr 1fr 1fr 30px; 
+    gap: 10px; 
+    align-items: center; 
+    margin-bottom: 8px; 
+}
+
+.set-number { 
+    font-size: 12px; 
+    color: #888; 
+    font-weight: bold; 
+    text-align: center; 
+}
+
+.btn-remove-set { 
+    background: none; 
+    border: none; 
+    color: #ff4444; 
+    cursor: pointer; 
+    font-size: 14px; 
+}
+
+.btn-add-set { 
+    background: #222; 
+    border: 1px solid #333; 
+    color: #aaa; 
+    padding: 4px 10px; 
+    font-size: 11px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    margin-top: 5px; 
+}
+
+.btn-add-set:hover { 
+    background:#2a2a2a; 
+    color:#fff; 
+}
+
+/* ==========================================================================
+   7. COMPONENTES DE RENDIMENTO / HISTÓRICO (FEEDBACK)
+   ========================================================================== */
+.semana-block { 
+    margin-bottom: 30px; 
+}
+
+.semana-title { 
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #ff2a2a; 
+    border-bottom: 1px solid #ff2a2a; 
+    padding-bottom: 5px; 
+    margin-bottom: 15px; 
+    text-transform: uppercase; 
+}
+
+.card-actions { 
+    position: absolute; 
+    top: 15px; 
+    right: 15px; 
+    display: flex; 
+    gap: 8px; 
+}
+
+.btn-action-edit, .btn-action-del { 
+    background: #1a1a1a; 
+    border: 1px solid #333; 
+    padding: 4px 8px; 
+    border-radius: 4px; 
+    color: #ccc; 
+    font-size: 11px; 
+    cursor: pointer; 
+}
+
+.btn-action-edit:hover { border-color: #66ff66; color: #66ff66; }
+.btn-action-del:hover { border-color: #ff4444; color: #ff4444; }
+
+.history-exercise-box { 
+    background: #1a1a1a; 
+    border: 1px solid #222; 
+    border-radius: 4px; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+}
+
+.history-exercise-name { 
+    font-weight: bold; 
+    font-size: 13px; 
+    color: #ff2a2a; 
+    margin-bottom: 5px; 
+}
+
+.history-set-list { 
+    font-size: 12px; 
+    color: #bbb; 
+    padding-left: 5px; 
+}
+
+.feedback-block { 
+    margin-top: 15px; 
+    background: #111; 
+    padding: 10px; 
+    border-radius: 4px; 
+    border: 1px solid #222; 
+    font-size: 13px; 
+    color: #aaa; 
+}
+
+.feedback-title { 
+    font-weight: bold; 
+    color: #fff; 
+    font-size: 11px; 
+    text-transform: uppercase; 
+    margin-bottom: 4px; 
+}
